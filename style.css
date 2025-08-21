@@ -1,0 +1,131 @@
+/* ===================== GLOBAL STYLES ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ===================== HEADER & NAV ===================== */
+header {
+    background-color: #1a4d2e;
+    color: white;
+    padding: 15px 30px;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #f4d03f;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+    background: url('https://english.onlinekhabar.com/wp-content/uploads/2023/02/Futsal-1024x683.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #f4d03f;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #d4ac0d;
+}
+
+/* ===================== SECTIONS ===================== */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2,
+.services h2,
+.booking h2,
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Services cards */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    flex: 1 1 200px;
+    font-size: 1.1rem;
+}
+
+/* Booking form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+form input, form select {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px s

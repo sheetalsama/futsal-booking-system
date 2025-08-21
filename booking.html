@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Slot | Devi Sports Centre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <!-- Booking section with a simple form -->
+    <section class="booking">
+        <h2>Reserve Your Futsal Slot</h2>
+        <form id="bookingForm">
+            <label>
+                Choose Court:
+                <select id="court" required>
+                    <option value="Court 1">Court 1</option>
+                    <option value="Court 2">Court 2</option>
+                </select>
+            </label>
+            <label>
+                Your Name:
+                <input type="text" id="name" placeholder="Full Name" required>
+            </label>
+            <label>
+                Contact Number:
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </label>
+            <label>
+                Start Time:
+                <input type="datetime-local" id="start" required>
+            </label>
+            <label>
+                End Time:
+                <input type="datetime-local" id="end" required>
+            </label>
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+
+        <!-- Feedback message will appear here -->
+        <div id="message" class="message"></div>
+    </section>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <script>
+        // Bring in header and footer from separate files
+        ['header', 'footer'].forEach(id => {
+            fetch(id + '.html')
+                .then(res => res.text())
+                .then(html => document.getElementById(id).innerHTML = html);
+        });
+
+        // Handle form submission
+        const form = document.getElementById('bookingForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const court = document.getElementById('court').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const start = document.getElementById('start').value;
+            const end = document.getElementById('end').value;
+
+            // Make sure end time is after start time
+            if (new Date(start) >= new Date(end)) {
+                const msg = document.getElementById('message');
+                msg.textContent = '⚠️ End time must be after start time.';
+                msg.style.color = 'red';
+                return;
+            }
+
+            // Show confirmation (frontend-only)
+            const msg = document.getElementById('message');
+            msg.textContent = `✅ ${name}, your booking for ${court} from ${start} to ${end} is confirmed!`;
+            msg.style.color = 'green';
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
