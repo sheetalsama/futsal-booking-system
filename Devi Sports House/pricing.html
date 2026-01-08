@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing — Devi Sports House</title>
+  <meta name="description" content="Check out pricing plans at Devi Sports House — Casual Play, Student, and Corporate packages." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    :root{
+      --brand: #2e90ff;
+      --brand-600: #1e73d8;
+      --ink: #0f172a;
+      --muted: #475569;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --ring: rgba(46,144,255,.35);
+      --shadow-md: 0 10px 24px rgba(15, 23, 42, .12);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, .18);
+      --radius-xl: 20px;
+      --radius-lg: 14px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:'Poppins',sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.5;
+    }
+
+    /* Header */
+    .header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.85);
+      backdrop-filter:saturate(180%) blur(14px);
+      border-bottom:1px solid rgba(15,23,42,.06);
+    }
+    .container{max-width:1200px; margin:auto; padding:0 20px}
+    .nav{display:flex; justify-content:space-between; align-items:center; height:68px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand-logo img{height:36px; width:auto}
+    .nav-links{display:flex; gap:22px}
+    .nav-links a{text-decoration:none; color:var(--muted); font-weight:500}
+    .nav-links a:hover{color:var(--ink)}
+    .btn{border:none; padding:10px 16px; border-radius:12px; font-weight:600; cursor:pointer}
+    .btn-outline{background:#fff; border:1px solid #ddd}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),#00e5ff); color:#fff; box-shadow:0 8px 20px rgba(46,144,255,.3)}
+    .menu-toggle{display:none}
+
+    /* Hero / Pricing Intro */
+    .hero{
+      min-height:50vh;
+      display:grid; place-items:center;
+      background-image:linear-gradient(rgba(14,21,35,.55), rgba(14,21,35,.35)), url('hero1.jpg');
+      background-size:cover; background-position:center;
+      color:#fff; text-align:center; padding:60px 20px;
+    }
+    .hero h1{font-size:clamp(28px,5vw,48px); margin-bottom:14px}
+    .hero p{font-size:clamp(15px,2vw,18px); opacity:.95}
+
+    /* Pricing Cards */
+    .pricing-section{padding:70px 0}
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+    .card{
+      background:var(--card);
+      padding:30px;
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-lg);
+      color:var(--ink);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 30px rgba(15,23,42,.2);
+    }
+    .card h2{font-size:1.5rem; margin-bottom:10px}
+    .price{font-size:2rem; font-weight:700; color:var(--brand); margin:20px 0}
+    .features{list-style:none; padding:0; margin:20px 0}
+    .features li{margin-bottom:10px; color:var(--muted)}
+    .btn-card{align-self:flex-start; padding:12px 24px; border-radius:30px; background:var(--brand); color:#fff; text-decoration:none; font-weight:600; transition:background 0.3s ease}
+    .btn-card:hover{background:var(--brand-600)}
+
+    /* Footer */
+    footer{background:#0b1220; color:#cbd5e1; padding:40px 20px}
+    .footer-grid{display:grid; grid-template-columns:1.2fr repeat(3,1fr); gap:24px}
+    .footer-grid a{color:#9fb3c8; text-decoration:none}
+    .footer-grid a:hover{color:#fff}
+    .copy{margin-top:24px; border-top:1px solid rgba(255,255,255,.08); padding-top:18px; color:#8ea2b6; text-align:center}
+
+    /* Responsive */
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-logo"><img src="logo.png" alt="Logo"></div>
+        Devi <span style="color:var(--brand)">Sports House</span>
+      </a>
+      <nav class="nav-links">
+        <a href="homepage.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="cta">
+        <a href="login.html" class="btn btn-primary">Login / Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Our Pricing</h1>
+      <p>Choose the perfect plan for your game at Devi Sports House</p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="pricing-grid">
+      <!-- Casual Play -->
+      <div class="card">
+        <h2>Casual Play</h2>
+        <div class="price">Rs. 1200 / hr</div>
+        <ul class="features">
+          <li>Essential Equipment</li>
+          <li>Hydration & Snacks</li>
+          <li>Safety Measures</li>
+        </ul>
+        <a href="reward_system.html" class="btn-card">Book Now</a>
+      </div>
+
+      <!-- Student Package -->
+      <div class="card">
+        <h2>Student Package</h2>
+        <div class="price">Rs. 5000 / 5 hrs</div>
+        <ul class="features">
+          <li>Basic futsal equipment/Hydrations</li>
+          <li>Priority booking</li>
+          <li>Safety Measures</li>
+          <li>Safe lockers for personal belongings.</li>
+        </ul>
+        <a href="#" class="btn-card">Book Now</a>
+      </div>
+
+      <!-- Corporate Package -->
+      <div class="card">
+        <h2>Corporate Package</h2>
+        <div class="price">Rs. 15,000 / month</div>
+        <ul class="features">
+          <li>Branding & Media Opportunities</li>
+          <li>Professional Support</li>
+          <li>Corporate Tournaments</li>
+        </ul>
+        <a href="#" class="btn-card">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="color:#fff">
+          <div class="brand-logo"><img src="logo.png" alt="Logo"></div>
+          Devi<span style="color:#7cc4ff">Sports House</span>
+        </div>
+        <p style="margin-top:10px; color:#9fb3c8">Two courts. One click. Endless rewards.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a><br>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a><br>
+        <a href="#">Careers</a>
+      </div>
+      <div>
+        <h4>Get updates</h4>
+        <form onsubmit="return subscribe(event)" style="display:flex; gap:8px; margin-top:8px">
+          <input class="input" type="email" id="sub-email" placeholder="you@example.com" required style="flex:1">
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> Devi Sports House. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('sub-email').value;
+      alert("Subscribed: " + email);
+      e.target.reset();
+      return false;
+    }
+
+    // Fade-in animation
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.animate([{opacity:0, transform:'translateY(10px)'},{opacity:1, transform:'translateY(0)'}], {duration:450, easing:'ease-out'});
+          observer.unobserve(e.target);
+        }
+      })
+    }, {threshold:.15});
+    document.querySelectorAll('.card, .footer-grid').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
