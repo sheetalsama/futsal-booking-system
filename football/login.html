@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login — Devi's Sports Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Global + Page Styles: consistent theme + dedicated login polish -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body class="theme-bw login-page">
+  <!-- Header injected -->
+  <header></header>
+
+  <!-- Fullscreen backdrop: keeps focus on the card -->
+  <div class="auth-bg">
+    <main class="auth-container">
+      <div class="card auth-card">
+        <h2 class="auth-title"><i class="fa fa-futbol"></i> Welcome Back</h2>
+        <p class="auth-subtitle">Sign in to book your futsal slot</p>
+
+        <form id="loginForm" onsubmit="login(); return false;">
+          <!-- Clear labels + icons = reduce cognitive load -->
+          <div class="form-row">
+            <label for="identifier"><i class="fa fa-envelope"></i> Email or Phone</label>
+            <input id="identifier" type="text" placeholder="you@example.com or 98XXXXXXXX" required>
+          </div>
+
+          <div class="form-row password-row">
+            <label for="password"><i class="fa fa-lock"></i> Password</label>
+            <input id="password" type="password" placeholder="••••••••" required>
+            <!-- Simple visibility toggle improves usability -->
+            <button type="button" class="icon-btn" aria-label="Toggle password" onclick="togglePw('password')">
+              <i class="fa fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="form-row actions">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
+          </div>
+
+          <p id="loginError" class="error-msg" style="display:none;">Invalid credentials. Try again.</p>
+        </form>
+
+        <p class="switch-auth">Don’t have an account? <a href="signup.html">Sign up here</a></p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer injected -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="js/shared/layout.js"></script>
+  <script>
+    // Password visibility toggle: small usability boost
+    function togglePw(id) {
+      const el = document.getElementById(id);
+      el.type = el.type === 'password' ? 'text' : 'password';
+    }
+
+    // Lightweight demo auth: replace with real validation when backend is ready
+    function login() {
+      const id = document.getElementById('identifier').value.trim();
+      const pw = document.getElementById('password').value.trim();
+
+      if (!id || !pw) {
+        document.getElementById('loginError').style.display = 'block';
+        return;
+      }
+
+      // Simulate session storage (UX: persist if 'remember' checked)
+      const session = { name: 'Guest', email: id, role: 'user' };
+      const remember = document.getElementById('remember').checked;
+      (remember ? localStorage : sessionStorage).setItem('session', JSON.stringify(session));
+
+      // Direct feedback: let users see successful action reflected immediately
+      location.href = 'profile.html';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+

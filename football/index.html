@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Devi's Sports Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Global Styles (black/white/orange, modern fonts, clean spacing) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <!-- Local icon + font stubs (adjust to your assets or remove if not needed) -->
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body class="theme-bw">
+  <!-- Header injected via JS for consistency across pages -->
+  <header></header>
+
+  <!-- 🏟️ Hero: strong first impression, bold headline, clear CTA -->
+  <section class="hero">
+    <!-- Image: visually immersive; darkened to keep text readable -->
+    <img src="assets/images/hero.jpg" alt="Players on futsal court" class="hero-img">
+    <div class="hero-text">
+      <h1>Play Your Way</h1>
+      <p>Book futsal courts, explore packages, and earn rewards at Devi's Sports Centre.</p>
+      <a href="booking.html" class="btn btn-primary">
+        <i class="fa fa-calendar-check"></i> Book Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ⚽ Courts: scannable cards, clean spacing, quick actions -->
+  <section class="court-section">
+    <h2>Available Courts</h2>
+    <div class="court-grid">
+      <!-- Card: image + short details + action; readable at-a-glance -->
+      <div class="court-card">
+        <img src="assets/images/court1.jpg" alt="Futsal A">
+        <div class="court-info">
+          <h3>Futsal A</h3>
+          <p>Indoor turf, LED lights, locker rooms.</p>
+          <span class="rating">★★★★☆</span>
+          <a class="btn btn-secondary" href="booking.html">Book Futsal A</a>
+        </div>
+      </div>
+      <div class="court-card">
+        <img src="assets/images/court2.jpg" alt="Futsal B">
+        <div class="court-info">
+          <h3>Futsal B</h3>
+          <p>Outdoor turf, spacious, crowd favorite.</p>
+          <span class="rating">★★★☆☆</span>
+          <a class="btn btn-secondary" href="booking.html">Book Futsal B</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎟️ Packages: orange accents draw attention to savings -->
+  <section class="booking-section">
+    <h2>Choose the booking option that suits your style</h2>
+    <div class="booking-cards">
+      <div class="booking-card">
+        <img src="assets/images/individual.jpg" alt="Individual booking icon" class="icon">
+        <h3>Individual</h3>
+        <p>Solo bookings up to 3 months ahead.</p>
+        <span class="badge badge-accent">10% Discount</span>
+      </div>
+      <div class="booking-card">
+        <img src="assets/images/team.jpg" alt="Team booking icon" class="icon">
+        <h3>Team</h3>
+        <p>Squad bookings with bigger savings.</p>
+        <span class="badge badge-accent">15% Discount</span>
+      </div>
+      <div class="booking-card">
+        <img src="assets/images/camp.jpg" alt="Camp booking icon" class="icon">
+        <h3>Camp</h3>
+        <p>Training camps and long-term reservations.</p>
+        <span class="badge badge-accent">5% Discount</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🏅 Loyalty: clear snapshot of progress; motivates repeat bookings -->
+  <section class="loyalty-section">
+    <h2>Your Rewards</h2>
+    <p>Points: <span id="loyaltyPoints">0</span></p>
+    <div id="loyaltyBar" class="progress-bar" aria-label="Loyalty progress"></div>
+    <p class="muted">Earn points every time you book. Redeem free slots when you hit milestones.</p>
+  </section>
+
+  <!-- Footer injected via JS for consistency and easy updates -->
+  <footer></footer>
+
+  <!-- Layout script injects header/footer, sets active nav -->
+  <script src="js/shared/layout.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

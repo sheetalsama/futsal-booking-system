@@ -1,0 +1,108 @@
+/* === Auth pages (login & signup) === */
+.auth-container {
+  max-width: 480px;        /* Limit width for centered form */
+  margin: 2rem auto;       /* Center vertically with spacing */
+}
+.auth-container h2 {
+  text-align: center;      /* Center the heading */
+  margin-bottom: 1rem;
+}
+.auth-container .form {
+  background: var(--card); /* Dark card background */
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* === Booking page === */
+.booking-page .calendar-section,
+.booking-page .slots-section,
+.booking-page .summary-section {
+  margin: 1.5rem 0;        /* Space between sections */
+}
+.calendar-grid {
+  grid-template-columns: repeat(7, 1fr); /* 7 days per week */
+}
+.calendar-day.selected {
+  border-color: var(--fg); /* Highlight selected day */
+}
+
+/* === Payment page === */
+.payment-page .qr-box {
+  display: flex;           /* Align QR + button horizontally */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.payment-page .qr-options,
+.payment-page .pay-type {
+  display: flex;           /* Radio buttons side by side */
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* === Confirmation page === */
+.confirmation-page .receipt-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* === Profile page === */
+.profile-page .profile-card {
+  margin-bottom: 1.5rem;   /* Space below profile info */
+}
+.profile-page .loyalty {
+  margin-bottom: 1.5rem;
+}
+.progress {
+  height: 10px;            /* Thin progress bar */
+  background: #0b0b0b;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.progress-bar {
+  height: 100%;
+  background: var(--fg);   /* White progress fill */
+  width: 0%;               /* Updated dynamically */
+  border-radius: 10px;
+}
+
+/* === Feedback page === */
+.feedback-page .stars i {
+  font-size: 1.2rem;       /* Slightly larger stars */
+  cursor: pointer;         /* Clickable */
+  color: var(--muted);     /* Default gray */
+}
+.feedback-page .stars i.active {
+  color: var(--fg);        /* White when selected */
+}
+.ratings-summary .avg-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+/* === Notifications page === */
+.notifications-page .list li {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* === Admin page === */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Responsive cards */
+  gap: 1rem;
+}
+.admin-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}

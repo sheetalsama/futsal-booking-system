@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment — QR Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Consistent styling with focus on summary + action clarity -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body class="theme-bw">
+  <header></header>
+
+  <main class="payment-page">
+    <h2 class="page-title">Payment</h2>
+
+    <!-- Summary: reassure users with clear details before asking for payment -->
+    <section class="summary-section">
+      <h3>Booking summary</h3>
+      <div id="paymentSummary" class="summary"></div>
+    </section>
+
+    <!-- QR choices: fewer steps, faster checkout -->
+    <section class="qr-section">
+      <h3>QR Payment</h3>
+      <div class="qr-options">
+        <label><input type="radio" name="gateway" value="esewa" checked> eSewa</label>
+        <label><input type="radio" name="gateway" value="khalti"> Khalti</label>
+      </div>
+
+      <div class="pay-type">
+        <label><input type="radio" name="paytype" value="advance" checked> Advance (30%)</label>
+        <label><input type="radio" name="paytype" value="full"> Full</label>
+      </div>
+
+      <div class="qr-box">
+        <!-- Placeholder: replace with actual QR render if you add a generator -->
+        <div id="qrCode" class="qr-placeholder">
+          <i class="fa fa-qrcode"></i>
+        </div>
+        <button class="btn btn-primary" id="simulatePayment">Simulate Payment</button>
+        <p id="paymentError" class="error-msg" style="display:none;">Payment failed. Try again.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="js/shared/layout.js"></script>
+  <script src="js/user/payment.js"></script>
+</body>
+</html>
+
+
+
+

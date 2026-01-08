@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking — Devi's Sports Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Global + Page Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body class="theme-bw">
+  <!-- Header injected -->
+  <header></header>
+
+  <main class="booking-page">
+    <h2 class="page-title">Book Your Slot</h2>
+
+    <!-- Court selection: clear cards with quick info -->
+    <section class="booking-card">
+      <h3>Select Court</h3>
+      <select id="courtSelect">
+        <option value="Futsal A">Futsal A — Indoor turf</option>
+        <option value="Futsal B">Futsal B — Outdoor turf</option>
+      </select>
+    </section>
+
+    <!-- Date & Time: simple inputs for clarity -->
+    <section class="booking-card">
+      <h3>Date & Time</h3>
+      <input type="date" id="bookingDate" required>
+      <input type="time" id="bookingTime" required>
+    </section>
+
+    <!-- Package: orange accents highlight discounts -->
+    <section class="booking-card">
+      <h3>Package</h3>
+      <select id="packageSelect">
+        <option value="individual">Individual (10% off)</option>
+        <option value="team">Team (15% off)</option>
+        <option value="camp">Camp (5% off)</option>
+      </select>
+    </section>
+
+    <!-- Confirm button: bold orange CTA -->
+    <section class="booking-card">
+      <button id="confirmBooking" class="btn btn-primary">
+        <i class="fa fa-check"></i> Confirm Booking
+      </button>
+      <p id="bookingError" class="error-msg" style="display:none;">Please fill all fields.</p>
+    </section>
+  </main>
+
+  <!-- Footer injected -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="js/shared/layout.js"></script>
+  <script>
+    // Demo booking flow: store booking in localStorage
+    document.getElementById('confirmBooking').addEventListener('click', () => {
+      const court = document.getElementById('courtSelect').value;
+      const date = document.getElementById('bookingDate').value;
+      const time = document.getElementById('bookingTime').value;
+      const pkg = document.getElementById('packageSelect').value;
+
+      if (!court || !date || !time || !pkg) {
+        document.getElementById('bookingError').style.display = 'block';
+        return;
+      }
+
+      const booking = { court, date, time, package: pkg, price: 1500 };
+      localStorage.setItem('pendingBooking', JSON.stringify(booking));
+
+      // Feedback: let user know booking is saved
+      alert('Booking saved! Proceed to payment.');
+      location.href = 'payment.html';
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

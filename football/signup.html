@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup — Devi's Sports Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Global + Page Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body class="theme-bw signup-page">
+  <!-- Header injected -->
+  <header></header>
+
+  <!-- Fullscreen background for focus and polish -->
+  <div class="auth-bg">
+    <main class="auth-container">
+      <div class="card auth-card">
+        <h2 class="auth-title"><i class="fa fa-user-plus"></i> Create Account</h2>
+        <p class="auth-subtitle">Join Devi’s Sports Centre and start booking</p>
+
+        <form id="signupForm" onsubmit="verifySignup(); return false;">
+          <!-- Asking only what’s necessary reduces friction -->
+          <div class="form-row">
+            <label for="name"><i class="fa fa-user"></i> Full Name</label>
+            <input id="name" type="text" placeholder="Your Name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone"><i class="fa fa-phone"></i> Phone</label>
+            <input id="phone" type="tel" placeholder="98XXXXXXXX" required>
+          </div>
+
+          <div class="form-row password-row">
+            <label for="password"><i class="fa fa-lock"></i> Password</label>
+            <input id="password" type="password" placeholder="••••••••" required oninput="pwStrength(this.value)">
+            <!-- Strength hint: immediate feedback builds trust -->
+            <small id="pwHint" class="hint">Use 8+ chars, a number, and a symbol.</small>
+          </div>
+
+          <div class="form-row">
+            <label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password</label>
+            <input id="confirmPassword" type="password" placeholder="Repeat password" required>
+          </div>
+
+          <div class="form-row checkbox-row">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the terms & conditions</label>
+          </div>
+
+          <div class="form-row actions">
+            <button class="btn btn-primary" type="submit">Verify & Sign Up</button>
+          </div>
+
+          <!-- Inline message keeps the user in flow -->
+          <p id="signupError" class="error-msg" style="display:none;">Please check your inputs.</p>
+          <p id="signupSuccess" class="success-msg" style="display:none;">Signup successful! Redirecting...</p>
+        </form>
+
+        <p class="switch-auth">Already have an account? <a href="login.html">Login here</a></p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer injected -->
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="js/shared/layout.js"></script>
+  <script>
+    // Simple strength check: keeps expectations clear and achievable
+    function pwStrength(pw) {
+      const hint = document.getElementById('pwHint');
+      const strong = pw.length >= 8 && /[0-9]/.test(pw) && /[^A-Za-z0-9]/.test(pw);
+      hint.textContent = strong ? 'Looking strong!' : 'Use 8+ chars, a number, and a symbol.';
+    }
+
+    function verifySignup() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const pw = document.getElementById('password').value;
+      const confirmPw = document.getElementById('confirmPassword').value;
+      const terms = document.getElementById('terms').checked;
+
+      const error = document.getElementById('signupError');
+      const success = document.getElementById('signupSuccess');
+
+      if (!name || !email || !phone || !pw || !confirmPw) {
+        error.textContent = 'All fields are required.';
+        error.style.display = 'block';
+        success.style.display = 'none';
+        return;
+      }
+      if (pw !== confirmPw) {
+        error.textContent = 'Passwords do not match.';
+        error.style.display = 'block';
+        success.style.display = 'none';
+        return;
+      }
+      if (!terms) {
+        error.textContent = 'Please accept the terms.';
+        error.style.display = 'block';
+        success.style.display = 'none';
+        return;
+      }
+
+      // Store a minimal profile (replace with secure backend later)
+      localStorage.setItem('user', JSON.stringify({ name, email, phone }));
+      success.style.display = 'block';
+      error.style.display = 'none';
+
+      setTimeout(() => location.href = 'login.html', 800);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

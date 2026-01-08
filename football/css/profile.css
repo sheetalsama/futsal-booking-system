@@ -1,0 +1,20 @@
+.profile-page {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.profile-card {
+  max-width: 420px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.profile-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}

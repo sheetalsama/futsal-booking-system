@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback — Rate & Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="theme-bw">
+  <header></header>
+
+  <main class="feedback-page">
+    <h2 class="page-title">Share your feedback</h2>
+
+    <form id="feedbackForm" class="form">
+      <label>Futsal</label>
+      <select id="fbFutsal">
+        <option value="A">Futsal A</option>
+        <option value="B">Futsal B</option>
+      </select>
+
+      <label>Rating</label>
+      <div id="starRating" class="stars">
+        <i data-rate="1" class="fa-regular fa-star"></i>
+        <i data-rate="2" class="fa-regular fa-star"></i>
+        <i data-rate="3" class="fa-regular fa-star"></i>
+        <i data-rate="4" class="fa-regular fa-star"></i>
+        <i data-rate="5" class="fa-regular fa-star"></i>
+      </div>
+
+      <label>Comments</label>
+      <textarea id="fbComment" rows="4" placeholder="Your experience..."></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit feedback</button>
+    </form>
+
+    <section class="ratings-summary">
+      <h3>Average ratings</h3>
+      <div class="avg-card">
+        <p>Futsal A: <span id="avgA">—</span></p>
+        <p>Futsal B: <span id="avgB">—</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="js/shared/layout.js"></script>
+  <script src="js/user/feedback.js"></script>
+</body>
+</html>
+
+
+
