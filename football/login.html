@@ -1,91 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login — Devi's Sports Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Global + Page Styles: consistent theme + dedicated login polish -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
-  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./components/style.css">
+    <style>
+        .body{
+            color: rgba(0, 0, 0, 0.5);
+        }
+        input{
+            border: none;
+            background-color: rgba(0, 0, 0, 0.192);
+            border-radius: 10px;
+            color: white;
+            font: 600;
+            transition: all 0.4s;
+            font-size: large;
+            padding: 5px;
+            
+            
+        }
+        input:focus{
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            outline: none;
+
+        }
+    </style>
+    <title>Document</title>
 </head>
-<body class="theme-bw login-page">
-  <!-- Header injected -->
-  <header></header>
+<body style="background-color: rgb(240, 238, 238);">
+   
+        <div class="navbar-wrapper" >
+            <div class="logo-name" style="padding-left: 10px; align-items: center; display: flex; justify-content: center;">
+                <div class="img-wrapper" style="border-radius: 100%; overflow: hidden; height: fit-content; width: fit-content; display: flex;">
+                    <img src="./assets/images/logo.png" style="height: 7vh; width: 7vh;"></div>
+                  <h1 style="height: fit-content; width: fit-content; padding-left: 30px ;">
+                devi sports center
+            </h1>
 
-  <!-- Fullscreen backdrop: keeps focus on the card -->
-  <div class="auth-bg">
-    <main class="auth-container">
-      <div class="card auth-card">
-        <h2 class="auth-title"><i class="fa fa-futbol"></i> Welcome Back</h2>
-        <p class="auth-subtitle">Sign in to book your futsal slot</p>
+            </div>
+          
+            <div class="navbar" style="position: absolute; left: 40vw;"> 
+                <a href="index.html" class="navbar-buttons">Home</a>
 
-        <form id="loginForm" onsubmit="login(); return false;">
-          <!-- Clear labels + icons = reduce cognitive load -->
-          <div class="form-row">
-            <label for="identifier"><i class="fa fa-envelope"></i> Email or Phone</label>
-            <input id="identifier" type="text" placeholder="you@example.com or 98XXXXXXXX" required>
-          </div>
-
-          <div class="form-row password-row">
-            <label for="password"><i class="fa fa-lock"></i> Password</label>
-            <input id="password" type="password" placeholder="••••••••" required>
-            <!-- Simple visibility toggle improves usability -->
-            <button type="button" class="icon-btn" aria-label="Toggle password" onclick="togglePw('password')">
-              <i class="fa fa-eye"></i>
-            </button>
-          </div>
-
-          <div class="form-row actions">
-            <button class="btn btn-primary" type="submit">Login</button>
-            <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
-          </div>
-
-          <p id="loginError" class="error-msg" style="display:none;">Invalid credentials. Try again.</p>
-        </form>
-
-        <p class="switch-auth">Don’t have an account? <a href="signup.html">Sign up here</a></p>
-      </div>
-    </main>
-  </div>
-
-  <!-- Footer injected -->
-  <footer></footer>
-
-  <!-- Scripts -->
-  <script src="js/shared/layout.js"></script>
-  <script>
-    // Password visibility toggle: small usability boost
-    function togglePw(id) {
-      const el = document.getElementById(id);
-      el.type = el.type === 'password' ? 'text' : 'password';
-    }
-
-    // Lightweight demo auth: replace with real validation when backend is ready
-    function login() {
-      const id = document.getElementById('identifier').value.trim();
-      const pw = document.getElementById('password').value.trim();
-
-      if (!id || !pw) {
-        document.getElementById('loginError').style.display = 'block';
-        return;
-      }
-
-      // Simulate session storage (UX: persist if 'remember' checked)
-      const session = { name: 'Guest', email: id, role: 'user' };
-      const remember = document.getElementById('remember').checked;
-      (remember ? localStorage : sessionStorage).setItem('session', JSON.stringify(session));
-
-      // Direct feedback: let users see successful action reflected immediately
-      location.href = 'profile.html';
-    }
-  </script>
+               
+                <a href="#" class="navbar-buttons">About us</a>
+            </div>
+            <div class="login-signup" style="display: flex; justify-content: center; position: absolute; right: 10px; width: 10vw; align-items: center;">
+                 <a href="login.html" class="navbar-buttons">Login</a>
+                <a href="signup.html" class="navbar-buttons">Signup</a>
+            </div>
+        </div>
+    <div class="body" style="height: 80vh; width: 100vw; justify-content: center; align-items: center; display: flex;">
+        <div class="form" style="height: 50vh; width: 23vw; background-color: white; border-radius: 7%; display: flex; flex-direction:column; align-items: center;">
+            <h1 style="display: flex; justify-content: center; align-items: center; padding: 2%; ;">Login</h1>
+            <label for="username" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Username</label>
+            <input type="text" id="username" style="width: 80%; height: 4vh;">
+            <label for="password" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Password</label>
+            <input type="password" id="password" style="width: 80%; height: 4vh;">
+            <button class="navbar-buttons" style="border: none ; margin-top: 20px;">Login</button>
+        </div>
+    </div>
 </body>
 </html>
-
-
-
-
-
-

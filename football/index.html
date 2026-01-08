@@ -1,115 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Devi's Sports Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Global Styles (black/white/orange, modern fonts, clean spacing) -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <!-- Local icon + font stubs (adjust to your assets or remove if not needed) -->
-  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./components/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Document</title>
 </head>
-<body class="theme-bw">
-  <!-- Header injected via JS for consistency across pages -->
-  <header></header>
+<body style="background-color: rgba(0, 0, 0, 0);">
+   
+        <div class="navbar-wrapper" >
+            <div class="logo-name" style="padding-left: 10px; align-items: center; display: flex; justify-content: center;">
+                <div class="img-wrapper" style="border-radius: 100%; overflow: hidden; height: fit-content; width: fit-content; display: flex;">
+                    <img src="./assets/images/logo.png" style="height: 7vh; width: 7vh;"></div>
+                  <h1 style="height: fit-content; width: fit-content; padding-left: 30px ;">
+                devi sports center
+            </h1>
 
-  <!-- 🏟️ Hero: strong first impression, bold headline, clear CTA -->
-  <section class="hero">
-    <!-- Image: visually immersive; darkened to keep text readable -->
-    <img src="assets/images/hero.jpg" alt="Players on futsal court" class="hero-img">
-    <div class="hero-text">
-      <h1>Play Your Way</h1>
-      <p>Book futsal courts, explore packages, and earn rewards at Devi's Sports Centre.</p>
-      <a href="booking.html" class="btn btn-primary">
-        <i class="fa fa-calendar-check"></i> Book Now
-      </a>
-    </div>
-  </section>
+            </div>
+          
+            <div class="navbar" style="position: absolute; left: 40vw;"> 
+                <a href="#" class="navbar-buttons">Home</a>
 
-  <!-- ⚽ Courts: scannable cards, clean spacing, quick actions -->
-  <section class="court-section">
-    <h2>Available Courts</h2>
-    <div class="court-grid">
-      <!-- Card: image + short details + action; readable at-a-glance -->
-      <div class="court-card">
-        <img src="assets/images/court1.jpg" alt="Futsal A">
-        <div class="court-info">
-          <h3>Futsal A</h3>
-          <p>Indoor turf, LED lights, locker rooms.</p>
-          <span class="rating">★★★★☆</span>
-          <a class="btn btn-secondary" href="booking.html">Book Futsal A</a>
+               
+                <a href="#" class="navbar-buttons">About us</a>
+            </div>
+            <div class="login-signup" style="display: flex; justify-content: center; position: absolute; right: 10px; width: 10vw; align-items: center;">
+                 <a href="Login.html" class="navbar-buttons">Login</a>
+                <a href="#" class="navbar-buttons">Signup</a>
+            </div>
+
+
+
+     
         </div>
-      </div>
-      <div class="court-card">
-        <img src="assets/images/court2.jpg" alt="Futsal B">
-        <div class="court-info">
-          <h3>Futsal B</h3>
-          <p>Outdoor turf, spacious, crowd favorite.</p>
-          <span class="rating">★★★☆☆</span>
-          <a class="btn btn-secondary" href="booking.html">Book Futsal B</a>
-        </div>
-      </div>
+       <div class="body" style="width: 100vw; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+           ` <h1 style="padding: 20px; width: 100vw; text-align: center;">
+                Book now
+            </h1>
+<div class="Futsal-Show" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background-color: white; width: 90vw; height: fit-content; padding: 20px;">
+<div class="card" style="margin: 5px;">
+  <div class="image_container">
+  </div>
+  <div class="title">
+    <span style="font-size: 25px;">Court 1</span>
+  </div>
+  <div class="size">
+    
+    <label for="date" style="font-size: 18px; ">Date</label>
+    <input id="date" type="date" style="margin-left: 5px; border: none; height: 4vh; font-weight: 500; font-size: large; padding: 5px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.103); color: rgb(0, 0, 0); ">
+
+  </div>
+  <div class="action">
+    <div class="price">
+      
     </div>
-  </section>
+      
+<div class="rating-stars" style="width: 100px; height: 10px; display: flex; justify-content: center; align-items: center; padding: 5px; ">
+<span style="font-size: 18px; color: #50754c; margin: 4px;">Rating</span>
 
-  <!-- 🎟️ Packages: orange accents draw attention to savings -->
-  <section class="booking-section">
-    <h2>Choose the booking option that suits your style</h2>
-    <div class="booking-cards">
-      <div class="booking-card">
-        <img src="assets/images/individual.jpg" alt="Individual booking icon" class="icon">
-        <h3>Individual</h3>
-        <p>Solo bookings up to 3 months ahead.</p>
-        <span class="badge badge-accent">10% Discount</span>
-      </div>
-      <div class="booking-card">
-        <img src="assets/images/team.jpg" alt="Team booking icon" class="icon">
-        <h3>Team</h3>
-        <p>Squad bookings with bigger savings.</p>
-        <span class="badge badge-accent">15% Discount</span>
-      </div>
-      <div class="booking-card">
-        <img src="assets/images/camp.jpg" alt="Camp booking icon" class="icon">
-        <h3>Camp</h3>
-        <p>Training camps and long-term reservations.</p>
-        <span class="badge badge-accent">5% Discount</span>
-      </div>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+</div>
     </div>
-  </section>
+    <button class="cart-button" onclick="book()">
+   
+      <span style="color: white; font-weight: 500; font-size: 15px;">Book</span>
+    </button>
+  </div>
+<div class="card" style="margin: 5px;">
+  <div class="image_container">
+  </div>
+  <div class="title">
+    <span style="font-size: 25px;">Court 2</span>
+  </div>
+  <div class="size">
+    
+    <label for="date" style="font-size: 18px; ">Date</label>
+    <input id="date" type="date" style="margin-left: 5px; border: none; height: 4vh; font-weight: 500; font-size: large; padding: 5px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.103); color: rgb(0, 0, 0); ">
 
-  <!-- 🏅 Loyalty: clear snapshot of progress; motivates repeat bookings -->
-  <section class="loyalty-section">
-    <h2>Your Rewards</h2>
-    <p>Points: <span id="loyaltyPoints">0</span></p>
-    <div id="loyaltyBar" class="progress-bar" aria-label="Loyalty progress"></div>
-    <p class="muted">Earn points every time you book. Redeem free slots when you hit milestones.</p>
-  </section>
+  </div>
+  <div class="action">
+    <div class="price">
+      
+    </div>
+      
+<div class="rating-stars" style="width: 100px; height: 10px; display: flex; justify-content: center; align-items: center; padding: 5px; ">
+<span style="font-size: 18px; color: #50754c; margin: 4px;">Rating</span>
 
-  <!-- Footer injected via JS for consistency and easy updates -->
-  <footer></footer>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+</div>
+    </div>
+    <button class="cart-button" onclick="book()">
+   
+      <span style="color: white; font-weight: 500; font-size: 15px;">Book</span>
+    </button>
+  </div>
+</div>
+ <h1 style="padding: 20px; width: 100vw; text-align: center;">
+             Packages
+            </h1>
 
-  <!-- Layout script injects header/footer, sets active nav -->
-  <script src="js/shared/layout.js"></script>
+
+
+
+
+
+
+<div class="packages" style="width: 100vw; height: 30vh; background-color: #36656B; display: flex; justify-content: center; align-items: center;">
+
+<div class="package" style="height: 15vh; width: 20vw; background-color: #529ba57e; display: flex; align-items: center; margin: 20px; padding: 10px; color: white; border-radius: 20px; flex-direction: column;" >
+    <div class="title" style="display: flex; flex-direction: row; ">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="40px" width="40px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ffffff;}
+</style>
+<g>
+	<path class="st0" d="M256,265.308c73.252,0,132.644-59.391,132.644-132.654C388.644,59.412,329.252,0,256,0   c-73.262,0-132.643,59.412-132.643,132.654C123.357,205.917,182.738,265.308,256,265.308z"/>
+	<path class="st0" d="M425.874,393.104c-5.922-35.474-36-84.509-57.552-107.465c-5.829-6.212-15.948-3.628-19.504-1.427   c-27.04,16.672-58.782,26.399-92.819,26.399c-34.036,0-65.778-9.727-92.818-26.399c-3.555-2.201-13.675-4.785-19.505,1.427   c-21.55,22.956-51.628,71.991-57.551,107.465C71.573,480.444,164.877,512,256,512C347.123,512,440.427,480.444,425.874,393.104z"/>
+</g>
+</svg> 
+<h1 style="margin-left: 10px;">Individual</h1>
+
+    </div>
+    <p  style="text-align: left;  width: 20vw; margin-top: 20px; font-size: large; font-weight: 600;">
+        Solo bookings upto 3 months ahead
+    </p>
+    <p  style="text-align: left;  width: 20vw; margin-top: 10px; font-size: large; font-weight: 600;">
+        No discount
+    </p>
+</div>
+
+
+<div class="package" style="height: 15vh; width: 20vw; background-color: #529ba57e; display: flex; align-items: center; margin: 20px; padding: 10px; color: white; border-radius: 20px; flex-direction: column;" >
+    <div class="title" style="display: flex; flex-direction: row; ">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="40px" width="40px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ffffff;}
+</style>
+<g>
+	<path class="st0" d="M256,265.308c73.252,0,132.644-59.391,132.644-132.654C388.644,59.412,329.252,0,256,0   c-73.262,0-132.643,59.412-132.643,132.654C123.357,205.917,182.738,265.308,256,265.308z"/>
+	<path class="st0" d="M425.874,393.104c-5.922-35.474-36-84.509-57.552-107.465c-5.829-6.212-15.948-3.628-19.504-1.427   c-27.04,16.672-58.782,26.399-92.819,26.399c-34.036,0-65.778-9.727-92.818-26.399c-3.555-2.201-13.675-4.785-19.505,1.427   c-21.55,22.956-51.628,71.991-57.551,107.465C71.573,480.444,164.877,512,256,512C347.123,512,440.427,480.444,425.874,393.104z"/>
+</g>
+</svg> 
+<h1 style="margin-left: 10px;">Individual</h1>
+
+    </div>
+    <p  style="text-align: left;  width: 20vw; margin-top: 20px; font-size: large; font-weight: 600;">
+        Solo bookings upto 3 months ahead
+    </p>
+    <p  style="text-align: left;  width: 20vw; margin-top: 10px; font-size: large; font-weight: 600;">
+        No discount
+    </p>
+</div>
+
+
+<div class="package" style="height: 15vh; width: 20vw; background-color: #529ba57e; display: flex; align-items: center; margin: 20px; padding: 10px; color: white; border-radius: 20px; flex-direction: column;" >
+    <div class="title" style="display: flex; flex-direction: row; ">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="40px" width="40px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ffffff;}
+</style>
+<g>
+	<path class="st0" d="M256,265.308c73.252,0,132.644-59.391,132.644-132.654C388.644,59.412,329.252,0,256,0   c-73.262,0-132.643,59.412-132.643,132.654C123.357,205.917,182.738,265.308,256,265.308z"/>
+	<path class="st0" d="M425.874,393.104c-5.922-35.474-36-84.509-57.552-107.465c-5.829-6.212-15.948-3.628-19.504-1.427   c-27.04,16.672-58.782,26.399-92.819,26.399c-34.036,0-65.778-9.727-92.818-26.399c-3.555-2.201-13.675-4.785-19.505,1.427   c-21.55,22.956-51.628,71.991-57.551,107.465C71.573,480.444,164.877,512,256,512C347.123,512,440.427,480.444,425.874,393.104z"/>
+</g>
+</svg> 
+<h1 style="margin-left: 10px;">Individual</h1>
+
+    </div>
+    <p  style="text-align: left;  width: 20vw; margin-top: 20px; font-size: large; font-weight: 600;">
+        Solo bookings upto 3 months ahead
+    </p>
+    <p  style="text-align: left;  width: 20vw; margin-top: 10px; font-size: large; font-weight: 600;">
+        No discount
+    </p>
+</div>
+</div>
+
+
+</div>
+       
 </body>
+<script>
+    function book(){
+        alert("please login to book");
+    }
+</script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,181 @@
+*{
+ margin: 0;
+ padding: 0;
+}
+.navbar-wrapper{
+ height: 10vh;
+ width: 100vw;
+ padding: 5px;
+ display:flex;
+ justify-content: left;
+ align-items: center;
+ background-color: #75B06F;
+ color: #36656B;   
+ box-shadow: 5px 1px 30px #36656b63;
+}
+.navbar-buttons{
+    padding: 10px;
+    color: #36656b;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #99c094;
+    transition: all 0.3s;
+    border-radius: 10%;
+    cursor: pointer;;
+    margin-right: 0.8vw;
+    font-weight: 700;
+
+    
+}
+.navbar-buttons:hover{
+    background-color: #36656B;
+    color: #F0F8A4;
+}
+.card {
+  --bg-card: #ECF4E8;
+  --primary: #75B06F;
+  --primary-800: #75B06F;
+  --primary-shadow: #75B06F;
+  --light: #50754c;
+  --zinc-800: #75B06F;
+  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1rem;
+  width: 25vw;
+  height: 40vh;
+  background-color: var(--bg-card);
+
+  border-radius: 1rem;
+}
+
+.image_container {
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 100rem;
+background-image: url("../assets/images/court1.jpg");
+background-position: center;
+  border-radius: 0.5rem;
+  background-repeat: none;
+}
+
+.image_container .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 3rem;
+  fill: var(--light);
+}
+
+.title {
+  overflow: clip;
+
+  width: 100%;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light);
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.size {
+  font-size: 0.75rem;
+  color: var(--light);
+}
+
+.list-size {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  margin-top: 0.25rem;
+}
+
+.list-size .item-list {
+  list-style: none;
+}
+
+.list-size .item-list-button {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  background-color: var(--zinc-800);
+
+  font-size: 0.75rem;
+  color: var(--light);
+
+  border: 2px solid var(--zinc-800);
+  border-radius: 0.25rem;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.item-list-button:hover {
+  border: 2px solid var(--light);
+}
+.item-list-button:focus {
+  background-color: var(--primary);
+
+  border: 2px solid var(--primary-shadow);
+
+  box-shadow: inset 0px 1px 4px var(--primary-shadow);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.cart-button {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 0.5rem;
+  width: 100%;
+  background-image: var(--bg-linear);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--light);
+  text-wrap: nowrap;
+
+  border: 2px solid hsla(262, 83%, 58%, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0.25rem 1px var(--light);
+}
+
+.cart-button .cart-icon {
+  width: 1rem;
+}
+
+.checked {
+    color: orange;
+}
+.fa{
+    margin: 2px;
+}

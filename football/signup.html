@@ -1,131 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Signup — Devi's Sports Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Global + Page Styles -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/signup.css">
-  <link rel="stylesheet" href="assets/fonts/fontawesome.css">
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./components/style.css">
+    <style>
+        .body{
+            color: rgba(0, 0, 0, 0.5);
+        }
+        input{
+            border: none;
+            background-color: rgba(0, 0, 0, 0.192);
+            border-radius: 10px;
+            color: white;
+            font: 600;
+            transition: all 0.4s;
+            font-size: large;
+            padding: 5px;
+            
+            
+        }
+        input:focus{
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            outline: none;
+
+        }
+    </style>
+    <title>Document</title>
 </head>
-<body class="theme-bw signup-page">
-  <!-- Header injected -->
-  <header></header>
+<body style="background-color: rgb(240, 238, 238);">
+   
+        <div class="navbar-wrapper" >
+            <div class="logo-name" style="padding-left: 10px; align-items: center; display: flex; justify-content: center;">
+                <div class="img-wrapper" style="border-radius: 100%; overflow: hidden; height: fit-content; width: fit-content; display: flex;">
+                    <img src="./assets/images/logo.png" style="height: 7vh; width: 7vh;"></div>
+                  <h1 style="height: fit-content; width: fit-content; padding-left: 30px ;">
+                devi sports center
+            </h1>
 
-  <!-- Fullscreen background for focus and polish -->
-  <div class="auth-bg">
-    <main class="auth-container">
-      <div class="card auth-card">
-        <h2 class="auth-title"><i class="fa fa-user-plus"></i> Create Account</h2>
-        <p class="auth-subtitle">Join Devi’s Sports Centre and start booking</p>
+            </div>
+          
+            <div class="navbar" style="position: absolute; left: 40vw;"> 
+                <a href="index.html" class="navbar-buttons">Home</a>
 
-        <form id="signupForm" onsubmit="verifySignup(); return false;">
-          <!-- Asking only what’s necessary reduces friction -->
-          <div class="form-row">
-            <label for="name"><i class="fa fa-user"></i> Full Name</label>
-            <input id="name" type="text" placeholder="Your Name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required>
-          </div>
-
-          <div class="form-row">
-            <label for="phone"><i class="fa fa-phone"></i> Phone</label>
-            <input id="phone" type="tel" placeholder="98XXXXXXXX" required>
-          </div>
-
-          <div class="form-row password-row">
-            <label for="password"><i class="fa fa-lock"></i> Password</label>
-            <input id="password" type="password" placeholder="••••••••" required oninput="pwStrength(this.value)">
-            <!-- Strength hint: immediate feedback builds trust -->
-            <small id="pwHint" class="hint">Use 8+ chars, a number, and a symbol.</small>
-          </div>
-
-          <div class="form-row">
-            <label for="confirmPassword"><i class="fa fa-lock"></i> Confirm Password</label>
-            <input id="confirmPassword" type="password" placeholder="Repeat password" required>
-          </div>
-
-          <div class="form-row checkbox-row">
-            <input type="checkbox" id="terms" required>
-            <label for="terms">I agree to the terms & conditions</label>
-          </div>
-
-          <div class="form-row actions">
-            <button class="btn btn-primary" type="submit">Verify & Sign Up</button>
-          </div>
-
-          <!-- Inline message keeps the user in flow -->
-          <p id="signupError" class="error-msg" style="display:none;">Please check your inputs.</p>
-          <p id="signupSuccess" class="success-msg" style="display:none;">Signup successful! Redirecting...</p>
-        </form>
-
-        <p class="switch-auth">Already have an account? <a href="login.html">Login here</a></p>
-      </div>
-    </main>
-  </div>
-
-  <!-- Footer injected -->
-  <footer></footer>
-
-  <!-- Scripts -->
-  <script src="js/shared/layout.js"></script>
-  <script>
-    // Simple strength check: keeps expectations clear and achievable
-    function pwStrength(pw) {
-      const hint = document.getElementById('pwHint');
-      const strong = pw.length >= 8 && /[0-9]/.test(pw) && /[^A-Za-z0-9]/.test(pw);
-      hint.textContent = strong ? 'Looking strong!' : 'Use 8+ chars, a number, and a symbol.';
-    }
-
-    function verifySignup() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const pw = document.getElementById('password').value;
-      const confirmPw = document.getElementById('confirmPassword').value;
-      const terms = document.getElementById('terms').checked;
-
-      const error = document.getElementById('signupError');
-      const success = document.getElementById('signupSuccess');
-
-      if (!name || !email || !phone || !pw || !confirmPw) {
-        error.textContent = 'All fields are required.';
-        error.style.display = 'block';
-        success.style.display = 'none';
-        return;
-      }
-      if (pw !== confirmPw) {
-        error.textContent = 'Passwords do not match.';
-        error.style.display = 'block';
-        success.style.display = 'none';
-        return;
-      }
-      if (!terms) {
-        error.textContent = 'Please accept the terms.';
-        error.style.display = 'block';
-        success.style.display = 'none';
-        return;
-      }
-
-      // Store a minimal profile (replace with secure backend later)
-      localStorage.setItem('user', JSON.stringify({ name, email, phone }));
-      success.style.display = 'block';
-      error.style.display = 'none';
-
-      setTimeout(() => location.href = 'login.html', 800);
-    }
-  </script>
+               
+                <a href="#" class="navbar-buttons">About us</a>
+            </div>
+            <div class="login-signup" style="display: flex; justify-content: center; position: absolute; right: 10px; width: 10vw; align-items: center;">
+                 <a href="login.html" class="navbar-buttons">Login</a>
+                <a href="signup.html" class="navbar-buttons">Signup</a>
+            </div>
+        </div>
+    <div class="body" style="height: 80vh; width: 100vw; justify-content: center; align-items: center; display: flex;">
+        <div class="form" style="height: 70vh; width: 23vw; background-color: white; border-radius: 7%; display: flex; flex-direction:column; align-items: center;">
+            <h1 style="display: flex; justify-content: center; align-items: center; padding: 2%; ;">Signup</h1>
+            
+            <label for="name" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Name</label>
+            <input type="text" id="username" style="width: 80%; height: 4vh;">
+            <label for="username" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Address</label>
+            <input type="text" id="username" style="width: 80%; height: 4vh;">
+            <label for="username" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Phone</label>
+            <input type="text" id="username" style="width: 80%; height: 4vh;">
+            <label for="username" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Username</label>
+            <input type="text" id="username" style="width: 80%; height: 4vh;">
+            <label for="password" style="font-size: 20px; padding: 2%; font-weight: 600; margin-right: 50%;">Password</label>
+            <input type="password" id="password" style="width: 80%; height: 4vh;">
+            <button class="navbar-buttons" style="border: none ; margin-top: 20px;">Signup</button>
+        </div>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
